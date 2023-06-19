@@ -56,7 +56,7 @@
             <form method="POST">
                 <div class="form-group">
                     <label for="PID">PID</label>
-                    <input type="PID" id="PID" name="PID" required>
+                    <input type="password" id="PID" name="PID" required>
                 </div>
                 <!-- <div class="form-group">
                     <label for="currentpassword">Current Password</label>
