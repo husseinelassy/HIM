@@ -3,8 +3,9 @@
 <head>
     <link rel="Website Icon" href="css/images/logo2.png" type="png" >
 	<meta charset="utf-8">
-	<title>Qr Generator</title>
+	<title>QR Generator</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/qr.css">
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -15,6 +16,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+
+
 <div class="container">
 	<h1 class="page-header text-center">Get patient Qr code</h1>
 	<div class="row">
@@ -24,7 +28,7 @@
 					<label for="">PID</label>
 					<input type="text" class="form-control" name="PID">
 				</div>
-				<button type="submit" class="btn btn-primary" name="generate">Generate QRCode</button>
+				<button type="submit" class="btn " btn-primary  name="generate">Generate QRCode</button>
 			</form>
 		</div>
 		<div class="col-sm-3">
