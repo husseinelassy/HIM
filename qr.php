@@ -13,12 +13,7 @@
         <div class="logo_image"> <img src="css/images/logo2.png" alt="HIS Logo" width="80" height="80"> </div>
         <a href="#" class="logo">Hospital Information System</a>
         <nav class="navigation">
-            <a href="#map">The Map</a>
-            <a href="#Patient-Search">Patient Search</a>
-            <a href="#Staff-Search">Staff Search</a>
-            <a href="#contact">Contact</a>
-            <a href="Policies.html">Policies</a>
-            <a href="qr.php">QR Generator</a>
+
             <a href="logout.php">Logout</a>
         </nav>
     </header>
