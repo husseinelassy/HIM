@@ -177,7 +177,7 @@ if (!isset($_SESSION['admin-name'])) {
                 <label for="PID">ID:</label>
                 <input type="text" id="PID" name="PID">
                 <br>
-                <label for="acc_id">acc_id:</label>
+                <label for="acc_id">ACC. ID:</label>
                 <input type="text" id="acc_id" name="acc_id">
             </fieldset>
 
