@@ -134,30 +134,51 @@ if (!isset($_SESSION['admin-name'])) {
     </div>
 
     <?php
-    if (isset($_POST['submit'])) {
+    // if (isset($_POST['addMED'])) {
+    //     $PID = $_POST["PID"];
+    //     $Result = mysqli_query($conn, "SELECT * FROM patient  WHERE PID='$PID'");
+    //     $Result1 = mysqli_query($conn, "SELECT * FROM medicine");
+    //     $row = mysqli_fetch_array($Result);
+    //     if (mysqli_num_rows($Result) > 0) {
+    //         $row1 = mysqli_fetch_array($Result1);
+    //         if (mysqli_num_rows($Result1) > 0) {
+    //             if ($PID == $row['PID']) {
+    //                 $MedicationName = mysqli_real_escape_string($conn, $_POST['MedicationName']);
+    //                 $Frequency = mysqli_real_escape_string($conn, $_POST['Frequency']);
+    //                 $Duration = mysqli_real_escape_string($conn, $_POST['Duration']);
+    //                 $price = mysqli_real_escape_string($conn, $_POST['price']);
+    //                 $dosage = mysqli_real_escape_string($conn, $_POST['dosage']);
+    //                 $PID = mysqli_real_escape_string($conn, $_POST['PID']);
+    //                 $Querys = mysqli_query($conn,"INSERT INTO medicine VALUES('','$MedicationName','$Frequency','$Duration','$price','$dosage','$PID')");
+    //                 echo "<script> alert('MED Added Successfully'); </script>";
+    //             }
+    //         }
+    //     } else {
+    //         echo
+    //         "<script> alert('ID Doesnt Match'); </script>";
+    //     }
+    // }
+    if (isset($_POST['addMED'])) {
         $PID = $_POST["PID"];
         $Result = mysqli_query($conn, "SELECT * FROM patient  WHERE PID='$PID'");
-        $Result1 = mysqli_query($conn, "SELECT * FROM medicine");
         $row = mysqli_fetch_array($Result);
-        if (mysqli_num_rows($Result) > 0) {
-            $row1 = mysqli_fetch_array($Result1);
-            if (mysqli_num_rows($Result1) > 0) {
-                if ($PID == $row['PID']) {
-                    $PIS = mysqli_real_escape_string($conn, $_POST['PID']);
+        if ($PID == $row['PID']) {
                     $MedicationName = mysqli_real_escape_string($conn, $_POST['MedicationName']);
                     $Frequency = mysqli_real_escape_string($conn, $_POST['Frequency']);
                     $Duration = mysqli_real_escape_string($conn, $_POST['Duration']);
-                    $dosage = mysqli_real_escape_string($conn, $_POST['dosage']);
                     $price = mysqli_real_escape_string($conn, $_POST['price']);
-                    $Querys = mysqli_query($conn, "INSERT INTO medicine VALUES('','$MedicationName','$Frequency','$Duration','$dosage','$price','$PID')");
-                    echo
-                    "<script> alert('MED Added Successfully'); </script>";
-                }
-            }
+                    $dosage = mysqli_real_escape_string($conn, $_POST['dosage']);
+                    $PID = mysqli_real_escape_string($conn, $_POST['PID']);
+            $Query = mysqli_query($conn, "INSERT INTO medicine VALUES('','$MedicationName','$Frequency','$Duration','$price','$dosage','$PID')");
+            echo
+            "<script> alert('test ordered Successfully'); </script>";
         } else {
             echo
             "<script> alert('ID Doesnt Match'); </script>";
         }
+
+
+
     }
     ?>
     <!-- Add medications -->
@@ -187,17 +208,15 @@ if (!isset($_SESSION['admin-name'])) {
                 <label for="price">price:</label>
                 <input type="text" id="price" name="price" required><br>
 
-
             </fieldset>
-            <button type="submit" name="submit" id="submit">Add Med</button>
-
+<button type="submit" name="addMED" id="addMED">Add Med</button>
         </form>
     </section>
     <?php
     if (isset($_POST['add'])) {
         $PID = $_POST["PID"];
         $acc_id = $_POST["acc_id"];
-        $Result = mysqli_query($conn, "SELECT * FROM patient  WHERE PID='$PID'");
+        $Result = mysqli_query($conn, "SELECT * FROM patient WHERE PID='$PID'");
         $Result1 = mysqli_query($conn, "SELECT * FROM accountant  WHERE ID='$acc_id'");
         $row = mysqli_fetch_array($Result);
         if (mysqli_num_rows($Result) > 0) {
@@ -263,7 +282,7 @@ if (!isset($_SESSION['admin-name'])) {
             $test_price = mysqli_real_escape_string($conn, $_POST['price']);
             $Query = mysqli_query($conn, "INSERT INTO x_ray VALUES('','$PID','$test_type','$test_date','$test_notes','$test_price')");
             echo
-            "<script> alert('test ordered Successfully'); </script>";
+            "<script> alert('X-Ray ordered Successfully'); </script>";
         } else {
             echo
             "<script> alert('ID Doesnt Match'); </script>";
